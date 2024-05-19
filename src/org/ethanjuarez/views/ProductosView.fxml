@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="660.0" prefWidth="1173.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.ethanjuarez.controller.ProductosViewController">
+   <children>
+      <ImageView fitHeight="662.0" fitWidth="1184.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/ProductosView%20(1).png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnRegresar" alignment="CENTER" layoutX="955.0" layoutY="615.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="85.0" stylesheets="@../resource/KinalitosExpress.css">
+         <styleClass>
+            <String fx:value="Button1" />
+            <String fx:value="button2" />
+         </styleClass>
+      </Button>
+      <ImageView fitHeight="18.0" fitWidth="28.0" layoutX="989.0" layoutY="624.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/3643769-building-home-house-main-menu-start_113416%20(1).png" />
+         </image>
+      </ImageView>
+      <GridPane layoutX="476.0" layoutY="16.0" prefHeight="124.0" prefWidth="456.0">
+         <columnConstraints>
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="31.666664123535156" minHeight="10.0" prefHeight="27.666664123535156" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="48.333335876464844" minHeight="10.0" prefHeight="36.333335876464844" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label alignment="CENTER" stylesheets="@../resource/KinalitosExpress.css" text="DescripcionProductos" GridPane.rowIndex="1">
+               <styleClass>
+                  <String fx:value="label1" />
+                  <String fx:value="label" />
+               </styleClass>
+            </Label>
+            <Label stylesheets="@../resource/KinalitosExpress.css" text="precioUnitario" GridPane.rowIndex="2">
+               <styleClass>
+                  <String fx:value="label1" />
+                  <String fx:value="label" />
+               </styleClass>
+            </Label>
+            <Label stylesheets="@../resource/KinalitosExpress.css" text="PrecioDocena" GridPane.rowIndex="3">
+               <styleClass>
+                  <String fx:value="label1" />
+                  <String fx:value="label" />
+               </styleClass>
+            </Label>
+            <TextField fx:id="txtDescPro" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtPrecioU" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtPrecioD" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" stylesheets="@../resource/KinalitosExpress.css" text="CodigoProducto">
+               <styleClass>
+                  <String fx:value="label1" />
+                  <String fx:value="label" />
+               </styleClass>
+            </Label>
+            <TextField fx:id="txtCodigoProd" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="474.0" layoutY="137.0" prefHeight="134.0" prefWidth="456.0">
+         <columnConstraints>
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label alignment="CENTER" stylesheets="@../resource/KinalitosExpress.css" text="PrecioPorMayor">
+               <styleClass>
+                  <String fx:value="label1" />
+                  <String fx:value="label" />
+               </styleClass>
+            </Label>
+            <Label stylesheets="@../resource/KinalitosExpress.css" text="existencia" GridPane.rowIndex="1">
+               <styleClass>
+                  <String fx:value="label1" />
+                  <String fx:value="label" />
+               </styleClass>
+            </Label>
+            <TextField fx:id="txtPrecioM" GridPane.columnIndex="1" />
+            <TextField fx:id="txtExistencia" prefHeight="25.0" prefWidth="240.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label stylesheets="@../resource/KinalitosExpress.css" text="codigoTipoProducto" GridPane.rowIndex="2">
+               <styleClass>
+                  <String fx:value="label1" />
+                  <String fx:value="label" />
+               </styleClass>
+            </Label>
+            <Label stylesheets="@../resource/KinalitosExpress.css" text="codigoProveedor" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cmbCodigoTipoP" prefHeight="25.0" prefWidth="236.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cmbCodProv" prefHeight="25.0" prefWidth="257.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <TableView fx:id="tv_Cliente" layoutX="68.0" layoutY="286.0" prefHeight="303.0" prefWidth="1032.0">
+         <columns>
+            <TableColumn fx:id="colCodProd" minWidth="74.0" prefWidth="113.0" text="CodigoProductos" />
+            <TableColumn fx:id="colDescProd" minWidth="48.0" prefWidth="290.0" text="DscripcionProducto" />
+            <TableColumn fx:id="colPrecioU" minWidth="68.33331298828125" prefWidth="101.0" text="PrecioUnitario" />
+            <TableColumn fx:id="colPrecioD" minWidth="94.33331298828125" prefWidth="110.0" text="PrecioDocena" />
+            <TableColumn fx:id="colPrecioM" minWidth="23.0" prefWidth="117.0" text="PrecioPorMayor" />
+            <TableColumn fx:id="colExistencia" minWidth="0.0" prefWidth="67.0" text="Existencia" />
+            <TableColumn fx:id="colCodTipoProd" minWidth="0.0" prefWidth="126.0" text="codigoTipoProducto" />
+            <TableColumn fx:id="colCodProv" minWidth="74.0" prefWidth="107.0" text="CodigoProveedor" />
+         </columns>
+      </TableView>
+      <GridPane layoutX="309.0" layoutY="597.0" prefHeight="68.0" prefWidth="590.0">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="btnReportesPro" mnemonicParsing="false" prefHeight="55.0" prefWidth="125.0" stylesheets="@../resource/KinalitosExpress.css" text="   Reportes" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <styleClass>
+                  <String fx:value="button3" />
+                  <String fx:value="button4" />
+               </styleClass>
+               <graphic>
+                  <ImageView fx:id="imgBuscar" fitHeight="37.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/report.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnEditarPro" mnemonicParsing="false" prefHeight="55.0" prefWidth="125.0" stylesheets="@../resource/KinalitosExpress.css" text="       Editar" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <styleClass>
+                  <String fx:value="button3" />
+                  <String fx:value="button4" />
+               </styleClass>
+               <graphic>
+                  <ImageView fx:id="imgEditar" fitHeight="37.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/edeit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnEliminarPro" mnemonicParsing="false" prefHeight="55.0" prefWidth="125.0" stylesheets="@../resource/KinalitosExpress.css" text="       Eliminar" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <styleClass>
+                  <String fx:value="button3" />
+                  <String fx:value="button4" />
+               </styleClass>
+               <graphic>
+                  <ImageView fx:id="imgEliminar" fitHeight="37.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/waste.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnAgregarPro" mnemonicParsing="false" onAction="#agregar" prefHeight="55.0" prefWidth="125.0" stylesheets="@../resource/KinalitosExpress.css" text="       Agregar" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <styleClass>
+                  <String fx:value="button3" />
+                  <String fx:value="button4" />
+               </styleClass>
+               <graphic>
+                  <ImageView fx:id="imgAgregar" fitHeight="37.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
