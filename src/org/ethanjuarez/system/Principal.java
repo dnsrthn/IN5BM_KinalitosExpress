@@ -146,7 +146,7 @@ public class Principal extends Application {
 
     public void facturasView() {
         try {
-            FacturasViewController facturasView = (FacturasViewController) cambiarEscena("FacturasView.fxml", 621, 368);
+            FacturasViewController facturasView = (FacturasViewController) cambiarEscena("FacturasView.fxml", 854, 483);
             facturasView.setEscenarioPrincipal(this);
         } catch (Exception e) {
             System.out.println(e.getMessage());
