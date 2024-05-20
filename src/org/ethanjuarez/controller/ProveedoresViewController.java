@@ -46,6 +46,8 @@ public class ProveedoresViewController implements Initializable {
     @FXML
     private Button btnRegresar;
     @FXML
+    private Button btnTelprov;
+    @FXML
     private Button btnAgregar;
     @FXML
     private Button btnEditar;
@@ -150,6 +152,9 @@ public class ProveedoresViewController implements Initializable {
     public void handleButtonAction(ActionEvent event) {
         if (event.getSource() == btnRegresar) {
             escenarioPrincipal.menuPrincipalView();
+        }
+        if(event.getSource() == btnTelprov) {
+            escenarioPrincipal.telefonoProveedoresView();
         }
     }
 }

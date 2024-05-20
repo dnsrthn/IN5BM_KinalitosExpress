@@ -10,7 +10,7 @@ import java.util.Date;
 public class Compras {
 
     private int numeroDocumento;
-    private Date fechaDocumento;
+    private String fechaDocumento;
     private String descripcion;
     private double totalDocumento;
 
@@ -19,14 +19,13 @@ public class Compras {
     public Compras() {
     }
 
-    public Compras(int numeroDocumento, Date fechaDocumento, String descripcion, double totalDocumento) {
+    public Compras(int numeroDocumento, String fechaDocumento, String descripcion, double totalDocumento) {
         this.numeroDocumento = numeroDocumento;
         this.fechaDocumento = fechaDocumento;
         this.descripcion = descripcion;
         this.totalDocumento = totalDocumento;
     }
 
-    // Getters y Setters
     public int getNumeroDocumento() {
         return numeroDocumento;
     }
@@ -35,11 +34,11 @@ public class Compras {
         this.numeroDocumento = numeroDocumento;
     }
 
-    public Date getFechaDocumento() {
+    public String getFechaDocumento() {
         return fechaDocumento;
     }
 
-    public void setFechaDocumento(Date fechaDocumento) {
+    public void setFechaDocumento(String fechaDocumento) {
         this.fechaDocumento = fechaDocumento;
     }
 
@@ -58,4 +57,6 @@ public class Compras {
     public void setTotalDocumento(double totalDocumento) {
         this.totalDocumento = totalDocumento;
     }
+
+
 }

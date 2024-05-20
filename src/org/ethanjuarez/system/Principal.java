@@ -22,6 +22,7 @@ import org.ethanjuarez.controller.MenuPrincipalController;
 import org.ethanjuarez.controller.ProductosViewController;
 import org.ethanjuarez.controller.ProgramadorViewController;
 import org.ethanjuarez.controller.ProveedoresViewController;
+import org.ethanjuarez.controller.TelefonoProveedoresViewController;
 import org.ethanjuarez.controller.TipoProductoViewController;
 
 /**
@@ -135,7 +136,7 @@ public class Principal extends Application {
 
     public void empleadosView() {
         try {
-            EmpleadosViewController empleadosView = (EmpleadosViewController) cambiarEscena("EmpleadosView", 1139, 660);
+            EmpleadosViewController empleadosView = (EmpleadosViewController) cambiarEscena("EmpleadosView.fxml", 1139, 660);
             empleadosView.setEscenarioPrincipal(this);
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -145,14 +146,23 @@ public class Principal extends Application {
 
     public void facturasView() {
         try {
-            FacturasViewController facturasView = (FacturasViewController) cambiarEscena("facturasView", 1139, 660);
+            FacturasViewController facturasView = (FacturasViewController) cambiarEscena("FacturasView.fxml", 621, 368);
             facturasView.setEscenarioPrincipal(this);
         } catch (Exception e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
     }
-
+    
+    public void telefonoProveedoresView() {
+        try {
+            TelefonoProveedoresViewController telefonoProveedoresView = (TelefonoProveedoresViewController) cambiarEscena("telefonoProveedoresView.fxml", 647, 375);
+            telefonoProveedoresView.setEscenarioPrincipal(this);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
     public void cargoEmpleadoView() {
         try {
             CargoEmpleadoViewController cargoEmpleadoView = (CargoEmpleadoViewController) cambiarEscena("CargoEmpleadoView.fxml", 986, 555);

@@ -193,5 +193,17 @@
             </Button>
          </children>
       </GridPane>
+      <Button fx:id="btnTelProv" layoutX="59.0" layoutY="565.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="185.0" stylesheets="@../resource/KinalitosExpress.css" text="Telefono Proveedores">
+         <styleClass>
+            <String fx:value="button3" />
+            <String fx:value="button4" />
+         </styleClass>
+      </Button>
+      <Button fx:id="btnEmailProv" layoutX="59.0" layoutY="599.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="185.0" stylesheets="@../resource/KinalitosExpress.css" text="Email Proveedores">
+         <styleClass>
+            <String fx:value="button3" />
+            <String fx:value="button4" />
+         </styleClass>
+      </Button>
    </children>
 </AnchorPane>

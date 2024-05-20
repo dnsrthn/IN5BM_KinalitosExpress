@@ -89,9 +89,24 @@ public class ProductosViewController implements Initializable {
     @FXML
     private Button btnRegresar;
 
+    @FXML
+    public void handleButtonAction(ActionEvent event) {
+        if (event.getSource() == btnRegresar) {
+            escenarioPrincipal.menuPrincipalView();
+        }
+    }
+
+    public Principal getEscenarioPrincipal() {
+        return escenarioPrincipal;
+    }
+
+    public void setEscenarioPrincipal(Principal escenarioPrincipal) {
+        this.escenarioPrincipal = escenarioPrincipal;
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-       cargaDatosProd();
+        cargaDatosProd();
         cmbCodigoTipoP.setItems(getTipoProductos());
         cmbCodProv.setItems(getProveedores());
     }
@@ -178,7 +193,7 @@ public class ProductosViewController implements Initializable {
                         resultado.getString("paginaWeb")
                 ));
             }
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -294,19 +309,5 @@ public class ProductosViewController implements Initializable {
         cmbCodigoTipoP.getSelectionModel().getSelectedItem();
 
     }
-     @FXML
-    public void handleButtonAction(ActionEvent event) {
-        if (event.getSource() == btnRegresar) {
-            escenarioPrincipal.menuPrincipalView();
-        }
-    }
 
-
-    public Principal getEscenarioPrincipal() {
-        return escenarioPrincipal;
-    }
-
-    public void setEscenarioPrincipal(Principal escenarioPrincipal) {
-        this.escenarioPrincipal = escenarioPrincipal;
-    }
 }

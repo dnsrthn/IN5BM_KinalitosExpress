@@ -112,7 +112,7 @@ public class ComprasViewController implements Initializable {
                 while (result.next()) {
                     lista.add(new Compras(
                             result.getInt("numeroDocumento"),
-                            result.getDate("fechaDocumento"),
+                            result.getString("fechaDocumento"),
                             result.getString("descripcion"),
                             result.getDouble("TotalDocumento")));
                 }
@@ -168,23 +168,25 @@ public class ComprasViewController implements Initializable {
         }
     }
 
-    public void guardarComp() {
-        TipoProducto register = new TipoProducto();
-//        register.setNumeroDocumento(Integer.parseInt(txtNoDoc.getText()));
-//        register.setFechaDocumento(txtDateCompra.getText());
-//        register.setDescripcion(txtDescCompra.getText());
-//        register.setTotalDocumento(Double.parseDouble(txtTotal.getText());
-
+     public void guardarComp() {
+        Compras registro = new Compras();
+        registro.setNumeroDocumento(Integer.parseInt(txtNoDoc.getText()));
+//        registro.setFechaDocumento(txtDateCompra.getText());
+        registro.setDescripcion(txtDescCompra.getText());
+        registro.setTotalDocumento(Double.parseDouble(txtTotal.getText()));
         try {
-            PreparedStatement procedure = Conexion.getInstance().getConexion().prepareCall("{call sp_AgregarCompras(?,?,?,?)}");
-            procedure.setInt(1, register.getCodigoTipoProducto());
-            procedure.setString(2, register.getDescripcion());
-            procedure.execute();
-//            listaCompras.add(register);
-        } catch (SQLException e) {
+            PreparedStatement procedimiento = Conexion.getInstance().getConexion().prepareCall("call sp_agregarCompras(?,?,?,?);");
+            procedimiento.setInt(1, registro.getNumeroDocumento());
+//            procedimiento.setString(2, registro.getFechaDocumento());
+            procedimiento.setString(3, registro.getDescripcion());
+            procedimiento.setDouble(4, registro.getTotalDocumento());
+            procedimiento.execute();
+            listaCompras.add(registro);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
+    
 
     public void editarComp() {
         switch (tipoDeOperaciones) {
@@ -193,7 +195,7 @@ public class ComprasViewController implements Initializable {
                     btnEditar.setText("Actualizar");
                     btnReportes.setText("Cancelar");
                     btnAgregar.setDisable(true);
-//                    btnEliminar.setDisable(true);
+                    btnEliminar.setDisable(true);
                     imgEditar.setImage(new Image("/org/ethanjuarez/images/reload.png"));
                     imgBuscar.setImage(new Image("/org/ethanjuarez/images/cancelar.png"));
                     activarControlesComp();
@@ -204,7 +206,7 @@ public class ComprasViewController implements Initializable {
                 }
                 break;
             case ACTUALIZAR:
-//                actualizarTP();
+               actualizarComp();
                 btnEditar.setText("Editar");
                 btnReportes.setText("Reportes");
                 btnAgregar.setDisable(false);
@@ -223,14 +225,14 @@ public class ComprasViewController implements Initializable {
     public void actualizarComp() {
         try {
             PreparedStatement procedure = Conexion.getInstance().getConexion().prepareCall("{call sp_actualizarCompras(?,?,?)}");
-            Compras register = (Compras) tblCompras.getSelectionModel().getSelectedItem();
-
-            register.setFechaDocumento(txtDateCompra.getText());
-            register.setDescripcion(txtDescCompra.getText());
-            register.setTotalDocumento(txtTotal.getText());
-            procedure.setString(1, register.getFechaDocumento());
-            procedure.setString(2, register.getDescripcion());
-            procedure.getString(3, register.getTotalDocumento());
+//            Compras register = (Compras) tblCompras.getSelectionModel().getSelectedItem();
+//
+//            register.setFechaDocumento(txtDateCompra.getText());
+//            register.setDescripcion(txtDescCompra.getText());
+//            register.setTotalDocumento(txtTotal.getText());
+//            procedure.setString(1, register.getFechaDocumento());
+//            procedure.setString(2, register.getDescripcion());
+////            procedure.getDouble(3, register.getTotalDocumento());
             procedure.execute();
         } catch (SQLException e) {
             e.printStackTrace();
