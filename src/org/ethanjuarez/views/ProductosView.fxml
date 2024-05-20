@@ -174,7 +174,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnAgregarPro" mnemonicParsing="false" onAction="#agregar" prefHeight="55.0" prefWidth="125.0" stylesheets="@../resource/KinalitosExpress.css" text="       Agregar" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Button fx:id="btnAgregarPro" mnemonicParsing="false" prefHeight="55.0" prefWidth="125.0" stylesheets="@../resource/KinalitosExpress.css" text="       Agregar" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <styleClass>
                   <String fx:value="button3" />
                   <String fx:value="button4" />

@@ -136,7 +136,7 @@ public class Principal extends Application {
 
     public void empleadosView() {
         try {
-            EmpleadosViewController empleadosView = (EmpleadosViewController) cambiarEscena("EmpleadosView.fxml", 1139, 660);
+            EmpleadosViewController empleadosView = (EmpleadosViewController) cambiarEscena("EmpleadosView.fxml", 896, 518);
             empleadosView.setEscenarioPrincipal(this);
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -153,7 +153,7 @@ public class Principal extends Application {
             e.printStackTrace();
         }
     }
-    
+
     public void telefonoProveedoresView() {
         try {
             TelefonoProveedoresViewController telefonoProveedoresView = (TelefonoProveedoresViewController) cambiarEscena("telefonoProveedoresView.fxml", 647, 375);
@@ -163,6 +163,7 @@ public class Principal extends Application {
             e.printStackTrace();
         }
     }
+
     public void cargoEmpleadoView() {
         try {
             CargoEmpleadoViewController cargoEmpleadoView = (CargoEmpleadoViewController) cambiarEscena("CargoEmpleadoView.fxml", 986, 555);

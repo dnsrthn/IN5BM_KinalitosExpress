@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -34,12 +35,12 @@
       </ImageView>
       <TableView layoutX="42.0" layoutY="231.0" prefHeight="185.0" prefWidth="770.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0">
         <columns>
-          <TableColumn prefWidth="98.0" text="NumeroFactura" />
-            <TableColumn prefWidth="136.0" text="Estado" />
-          <TableColumn prefWidth="116.0" text="Total Factura" />
-            <TableColumn prefWidth="128.0" text="Fech Factura" />
-            <TableColumn prefWidth="113.0" text="Cliente Id" />
-            <TableColumn prefWidth="120.0" text="Codigo Empleado" />
+          <TableColumn fx:id="colNocFact" prefWidth="112.0" text="NumeroFactura" />
+            <TableColumn fx:id="colEstado" prefWidth="162.0" text="Estado" />
+          <TableColumn fx:id="colTotalFact" prefWidth="114.0" text="Total Factura" />
+            <TableColumn fx:id="colFechaFact" prefWidth="139.0" text="Fech Factura" />
+            <TableColumn fx:id="colClienteId" prefWidth="124.0" text="Cliente Id" />
+            <TableColumn fx:id="colCodigoEmpleado" prefWidth="132.0" text="Codigo Empleado" />
         </columns>
       </TableView>
       <GridPane layoutX="88.0" layoutY="415.0" prefHeight="68.0" prefWidth="590.0">
@@ -67,7 +68,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#editar" prefHeight="40.0" prefWidth="115.0" stylesheets="@../resource/KinalitosExpress.css" text="    Editar" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Button fx:id="btnEditar" mnemonicParsing="false" prefHeight="40.0" prefWidth="115.0" stylesheets="@../resource/KinalitosExpress.css" text="    Editar" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <styleClass>
                   <String fx:value="button3" />
                   <String fx:value="button4" />
@@ -80,7 +81,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminar" onDragDetected="#eliminar" prefHeight="40.0" prefWidth="115.0" stylesheets="@../resource/KinalitosExpress.css" text="    Eliminar" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Button fx:id="btnEliminar" mnemonicParsing="false" prefHeight="40.0" prefWidth="115.0" stylesheets="@../resource/KinalitosExpress.css" text="    Eliminar" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <styleClass>
                   <String fx:value="button3" />
                   <String fx:value="button4" />
@@ -93,7 +94,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#Agregar" prefHeight="40.0" prefWidth="115.0" stylesheets="@../resource/KinalitosExpress.css" text="    Agregar" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Button fx:id="btnAgregar" mnemonicParsing="false" prefHeight="40.0" prefWidth="115.0" stylesheets="@../resource/KinalitosExpress.css" text="    Agregar" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <styleClass>
                   <String fx:value="button3" />
                   <String fx:value="button4" />
@@ -108,70 +109,65 @@
             </Button>
          </children>
       </GridPane>
-      <GridPane layoutX="367.0" layoutY="17.0" prefHeight="210.0" prefWidth="366.0">
+      <GridPane layoutX="220.0" layoutY="67.0" prefHeight="138.0" prefWidth="599.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.0" minWidth="10.0" prefWidth="155.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="133.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="165.0" minWidth="10.0" prefWidth="153.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="146.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label stylesheets="@../resource/KinalitosExpress.css" text="Label">
+            <Label stylesheets="@../resource/KinalitosExpress.css" text="Numero Factura">
                <styleClass>
                   <String fx:value="label" />
                   <String fx:value="label1" />
                </styleClass>
             </Label>
-            <Label stylesheets="@../resource/KinalitosExpress.css" text="Label" GridPane.rowIndex="1">
+            <Label stylesheets="@../resource/KinalitosExpress.css" text="Estado" GridPane.rowIndex="1">
+               <styleClass>
+                  <String fx:value="label" />
+                  <String fx:value="label1" />
+               </styleClass>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <Label stylesheets="@../resource/KinalitosExpress.css" text="Total Factura" GridPane.rowIndex="2">
                <styleClass>
                   <String fx:value="label" />
                   <String fx:value="label1" />
                </styleClass>
             </Label>
-            <Label stylesheets="@../resource/KinalitosExpress.css" text="Label" GridPane.rowIndex="2">
+            <Label stylesheets="@../resource/KinalitosExpress.css" text="Fecha Factura" GridPane.rowIndex="3">
                <styleClass>
                   <String fx:value="label" />
                   <String fx:value="label1" />
                </styleClass>
             </Label>
-            <Label stylesheets="@../resource/KinalitosExpress.css" text="Label" GridPane.rowIndex="3">
+            <Label stylesheets="@../resource/KinalitosExpress.css" text="ClienteId" GridPane.columnIndex="2">
                <styleClass>
                   <String fx:value="label" />
                   <String fx:value="label1" />
                </styleClass>
             </Label>
-            <Label stylesheets="@../resource/KinalitosExpress.css" text="Label" GridPane.rowIndex="4">
+            <Label stylesheets="@../resource/KinalitosExpress.css" text="Codigo Empleado" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <styleClass>
                   <String fx:value="label" />
                   <String fx:value="label1" />
                </styleClass>
             </Label>
-            <Label stylesheets="@../resource/KinalitosExpress.css" text="Label" GridPane.rowIndex="5">
-               <styleClass>
-                  <String fx:value="label" />
-                  <String fx:value="label1" />
-               </styleClass>
-            </Label>
-            <Label stylesheets="@../resource/KinalitosExpress.css" text="Label" GridPane.rowIndex="6">
-               <styleClass>
-                  <String fx:value="label" />
-                  <String fx:value="label1" />
-               </styleClass>
-            </Label>
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField prefHeight="25.0" prefWidth="213.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <ComboBox prefHeight="25.0" prefWidth="189.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <ComboBox prefHeight="25.0" prefWidth="208.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="txtNoFact" GridPane.columnIndex="1" />
+            <TextField fx:id="txtEstado" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtTotalFact" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtFechaFact" prefHeight="25.0" prefWidth="213.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cmbCienteId" prefHeight="25.0" prefWidth="189.0" GridPane.columnIndex="3" />
+            <ComboBox fx:id="cmbCodigoEmpleado" prefHeight="25.0" prefWidth="208.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </children>
