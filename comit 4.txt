@@ -1,0 +1,1 @@
+se queda incompleto debido a fallos mayores que provocaron regresar a base 0
