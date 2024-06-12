@@ -27,8 +27,8 @@
             <TableColumn fx:id="colApellidoC" minWidth="0.0" prefWidth="111.0" text="ApellidoCliente" />
           <TableColumn fx:id="colNitC" minWidth="90.0" prefWidth="166.0" text="NitCliente" />
             <TableColumn fx:id="colDireccionC" minWidth="0.0" prefWidth="249.0" text="Direccion Cliente" />
-            <TableColumn fx:id="colCorreoC" prefWidth="107.66668701171875" text="TelefonoCliente" />
-            <TableColumn fx:id="colCorreoCliente" prefWidth="201.0" text="CorreoCliente" />
+            <TableColumn fx:id="colTelefonoC" prefWidth="107.66668701171875" text="TelefonoCliente" />
+            <TableColumn fx:id="colCorreoC" prefWidth="201.0" text="CorreoCliente" />
         </columns>
       </TableView>
       <GridPane layoutX="417.0" layoutY="31.0" prefHeight="85.0" prefWidth="456.0">

@@ -11,6 +11,9 @@ use  DB_KinalitosExpress;
 
 set global time_zone = '-6:00';
 
+alter user 'root'@'localhost' identified with mysql_native_password by 'root';
+flush privileges;
+
 create table Cliente(
 	codigoCliente int not null,
 	NITClientes varchar(10),
@@ -158,8 +161,10 @@ delimiter $$
 	end $$
 delimiter ;
 
-call sp_agregarClientes(1,'502452698','Diego','Bercian','12 Calle y 6 Avenida','3441421','dbercian');
-call sp_agregarClientes(5,'452021456','Samuel','Pérez','13 Calle y 5 Avenida','2595631','sPerez');
+call sp_agregarClientes(6, '12345678', 'juan', 'perez', 'calle falsa 123', '12345678', 'juan.perez@example.com');
+call sp_agregarClientes(2, '87654321', 'maria', 'gomez', 'avenida siempre viva 456', '87654321', 'maria.gomez@example.com');
+call sp_agregarClientes(3, '11223344', 'carlos', 'ramirez', 'boulevard de los sueños rotos 789', '11223344', 'carlos.ramirez@example.com');
+call sp_agregarClientes(4, '44332211', 'ana', 'lopez', 'plaza de la constitución 101', '22334455', 'ana.lopez@example.com');
 
 
 delimiter $$

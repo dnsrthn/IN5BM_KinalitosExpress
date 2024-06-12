@@ -88,7 +88,7 @@ public class MenuClientesController implements Initializable {
     @FXML
     private ImageView imgEliminar;
     @FXML
-    private Button btnRegresarC;
+    private Button btnRegresar;
 
     public Main getEscenarioPrincipal() {
         return escenarioPrincipal;
@@ -152,13 +152,13 @@ public class MenuClientesController implements Initializable {
     }
 
     public void agregar() {
-        switch(tipoDeOperaciones) {
+        switch (tipoDeOperaciones) {
             case NINGUNO:
                 activarControles();
                 btnEliminar.setText("Cancelar");
                 btnAgregar.setText("Guardar");
-                imgAgregar.setImage(new Image("/org/diegobercian/images/guardar.png"));
-                imgEliminar.setImage(new Image("/org/diegobercian/images/cancelar.png"));
+                imgAgregar.setImage(new Image("/org/ethanjuarez/images/guardar.png"));
+                imgEliminar.setImage(new Image("/org/ethanjuarez/images/cancelar.png"));
                 btnReportes.setDisable(true);
                 btnEditar.setDisable(true);
                 tipoDeOperaciones = operaciones.ACTUALIZAR;
@@ -171,55 +171,54 @@ public class MenuClientesController implements Initializable {
                 btnAgregar.setText("Agregar");
                 btnEliminar.setText("Eliminar");
                 imgAgregar.setImage(new Image("/org/ethanjuarez/images/agregar.png"));
-                imgEliminar.setImage(new Image("/org/ethanjuarez/images/eliminar.png"));  
+                imgEliminar.setImage(new Image("/org/ethanjuarez/images/eliminar.png"));
                 btnReportes.setDisable(false);
                 btnEditar.setDisable(false);
-                
+
                 tipoDeOperaciones = operaciones.NINGUNO;
                 break;
         }
     }
 
     public void guardar() {
-        Cliente registro = new Cliente();
-        registro.setCodigoCliente(Integer.parseInt(txtCodigoC.getText()));
-        registro.setNombresCliente(txtNombreC.getText());
-        registro.setApellidosCliente(txtApellidoC.getText());
-        registro.setNitClientes(txtNitC.getText());
-        registro.setTelefonoCliente(txtTelefonoC.getText());
-        registro.setDireccionCliente(txtDireccionC.getText());
-        registro.setCorreoCliente(txtCorreoC.getText());
+        Cliente register = new Cliente();
+        register.setCodigoCliente(Integer.parseInt(txtCodigoC.getText()));
+        register.setNombresCliente(txtNombreC.getText());
+        register.setApellidosCliente(txtApellidoC.getText());
+        register.setNitClientes(txtNitC.getText());
+        register.setTelefonoCliente(txtTelefonoC.getText());
+        register.setDireccionCliente(txtDireccionC.getText());
+        register.setCorreoCliente(txtCorreoC.getText());
         try {
             PreparedStatement procedimiento = Conexion.getInstance().getConexion().prepareCall("call sp_agregarClientes(?,?,?,?,?,?,?);");
-            procedimiento.setInt(1, registro.getCodigoCliente());
-            procedimiento.setString(2, registro.getNombresCliente());
-            procedimiento.setString(3, registro.getApellidosCliente());
-            procedimiento.setString(4, registro.getNitClientes());
-            procedimiento.setString(5, registro.getDireccionCliente());
-            procedimiento.setString(6, registro.getTelefonoCliente());
-            procedimiento.setString(7, registro.getCorreoCliente());
+            procedimiento.setInt(1, register.getCodigoCliente());
+            procedimiento.setString(2, register.getNombresCliente());
+            procedimiento.setString(3, register.getApellidosCliente());
+            procedimiento.setString(4, register.getNitClientes());
+            procedimiento.setString(5, register.getDireccionCliente());
+            procedimiento.setString(6, register.getTelefonoCliente());
+            procedimiento.setString(7, register.getCorreoCliente());
             procedimiento.execute();
-            listaClientes.add(registro);
+            listaClientes.add(register);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    
-    public void editar(){
-        switch(tipoDeOperaciones){
+    public void editar() {
+        switch (tipoDeOperaciones) {
             case NINGUNO:
-                if(tblClientes.getSelectionModel().getSelectedItem() != null){
+                if (tblClientes.getSelectionModel().getSelectedItem() != null) {
                     btnEditar.setText("Actualizar");
                     btnReportes.setText("Cancelar");
                     btnAgregar.setDisable(true);
                     btnEliminar.setDisable(true);
-                    imgEditar.setImage(new Image("/org/ethanjuarez/images/actualizar.png"));
+                    imgEditar.setImage(new Image("/org/ethanjuarez/images/reload.png"));
                     imgBuscar.setImage(new Image("/org/ethanjuarez/images/cancelar.png"));
                     activarControles();
                     txtCodigoC.setEditable(false);
                     tipoDeOperaciones = operaciones.ACTUALIZAR;
-                }else{
+                } else {
                     JOptionPane.showMessageDialog(null, "Debe de seleccionar un cliente para editar");
                 }
                 break;
@@ -238,11 +237,11 @@ public class MenuClientesController implements Initializable {
                 break;
         }
     }
-    
-    public void actualizar(){
-        try{
+
+    public void actualizar() {
+        try {
             PreparedStatement procedimiento = Conexion.getInstance().getConexion().prepareCall("call sp_actualizarClientes(?,?,?,?,?,?,?)");
-            Cliente registro = (Cliente)tblClientes.getSelectionModel().getSelectedItem();
+            Cliente registro = (Cliente) tblClientes.getSelectionModel().getSelectedItem();
             registro.setNitClientes(txtNitC.getText());
             registro.setNombresCliente(txtNombreC.getText());
             registro.setApellidosCliente(txtApellidoC.getText());
@@ -257,14 +256,14 @@ public class MenuClientesController implements Initializable {
             procedimiento.setString(6, registro.getTelefonoCliente());
             procedimiento.setString(7, registro.getCorreoCliente());
             procedimiento.execute();
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
+
     public void eliminar() {
 
-        switch(tipoDeOperaciones){
+        switch (tipoDeOperaciones) {
             case ACTUALIZAR:
                 desactivarControles();
                 limpiarControles();
@@ -273,35 +272,35 @@ public class MenuClientesController implements Initializable {
                 btnEditar.setDisable(false);
                 btnReportes.setDisable(false);
                 imgAgregar.setImage(new Image("/org/ethanjuarez/images/agregar.png"));
-                imgEliminar.setImage(new Image("/org/ethanjuarez/images/eliminar.png"));
+                imgEliminar.setImage(new Image("/org/ethanjuarez/images/waste.png"));
                 tipoDeOperaciones = operaciones.NINGUNO;
                 break;
-            default: 
-                if(tblClientes.getSelectionModel().getSelectedItem()  != null){
+            default:
+                if (tblClientes.getSelectionModel().getSelectedItem() != null) {
                     int respuesta = JOptionPane.showConfirmDialog(null, "¿Seguro que quieres eliminar al cliente?", "Eliminar Cliente", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-                    if(respuesta  == JOptionPane.YES_NO_OPTION){
-                        try{
+                    if (respuesta == JOptionPane.YES_NO_OPTION) {
+                        try {
                             PreparedStatement procedimiento = Conexion.getInstance().getConexion().prepareCall("call sp_eliminarClientes(?)");
-                            procedimiento.setInt(1, ((Cliente)tblClientes.getSelectionModel().getSelectedItem()).getCodigoCliente());
+                            procedimiento.setInt(1, ((Cliente) tblClientes.getSelectionModel().getSelectedItem()).getCodigoCliente());
                             procedimiento.execute();
                             listaClientes.remove(tblClientes.getSelectionModel().getSelectedItem());
-                            limpiarControles(); 
-                        }catch(Exception e){
+                            limpiarControles();
+                        } catch (Exception e) {
                             e.printStackTrace();
-                        } 
+                        }
                     }
-                }else{
+                } else {
                     JOptionPane.showMessageDialog(null, "Debe seleccionar un cliente para eliminar");
                 }
                 break;
-                
+
         }
     }
-    
-    public void cancelar(){
-    
+
+    public void cancelar() {
+
     }
-    
+
     public void reportes() {
         switch (tipoDeOperaciones) {
             case NINGUNO:
@@ -318,18 +317,16 @@ public class MenuClientesController implements Initializable {
                 imgBuscar.setImage(new Image("/org/ethanjuarez/images/buscar.png"));
                 tipoDeOperaciones = operaciones.NINGUNO;
                 break;
-                
+
         }
     }
-    
-    public void imprimirReporteClientes(){
+
+    public void imprimirReporteClientes() {
         Map parametros = new HashMap();
         parametros.put("codigoCliente", null);
         GenerarReportes.mostrarReportes("ReporteClientes.jasper", "Reporte Clientes", parametros);
-        
+
     }
-    
-    
 
     public void desactivarControles() {
         txtCodigoC.setEditable(false);
@@ -362,7 +359,7 @@ public class MenuClientesController implements Initializable {
     }
 
     public void handleButtonAction(ActionEvent event) {
-        if (event.getSource() == btnRegresarC) {
+        if (event.getSource() == btnRegresar) {
             escenarioPrincipal.menuPrincipalView();
         }
     }

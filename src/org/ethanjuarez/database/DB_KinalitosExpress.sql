@@ -214,7 +214,7 @@ delimiter $$
 	end $$
 delimiter ;
  
-call sp_eliminarClientes(2);
+call sp_eliminarClientes(1);
 
 
 -- -----------------------------------------------------------------------
@@ -228,7 +228,7 @@ delimiter $$
 delimiter ;
 
 call sp_agregarProveedores(1, '5485', 'David', 'Arevalo', '6 calle 4-76 zona 7', 'Arcos Dorados, C.A.', 'Mateo', 'arcosdorados.com');
-call sp_agregarProveedores(2, '5285', 'Adrián', 'Figueroa', '8 calle 4-43 zona 12', 'Carlos Fernández, E. I. R. L.', 'Luis', 'EIRL.com');
+call sp_agregarProveedores(2, '3333', 'María', 'González', 'Avenida Principal', 'González & Cía', 'Luisa', 'www.gonzalezycia.com');
 call sp_agregarProveedores(3, '5280', 'Gustavo', 'Verdezoto', '5 calle 4-56 zona 2	', 'Importaciones PFV.', 'Byron', 'PFV.com');
 
 delimiter $$

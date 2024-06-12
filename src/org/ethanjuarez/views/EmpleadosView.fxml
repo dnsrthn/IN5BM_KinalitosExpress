@@ -32,15 +32,15 @@
             <Image url="@../images/EmpleadosView.png" />
          </image>
       </ImageView>
-      <TableView fx:id="tbl" layoutX="39.0" layoutY="214.0" prefHeight="258.0" prefWidth="905.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+      <TableView fx:id="tblEmpleados" layoutX="39.0" layoutY="214.0" prefHeight="258.0" prefWidth="905.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
         <columns>
-          <TableColumn fx:id="collCodigoEmp" prefWidth="117.66666412353516" text="CodigoEmpleado" />
-          <TableColumn fx:id="colNombresEmp" minWidth="9.666664123535156" prefWidth="120.0" text="nombresEmpleado" />
-            <TableColumn fx:id="colApellidosEmp" prefWidth="130.33331298828125" text="apellidosEmpleado" />
-            <TableColumn fx:id="colSueldoEmp" prefWidth="111.0" text="sueldo" />
-            <TableColumn fx:id="colDireccionEmp" prefWidth="185.0" text="direccion" />
-            <TableColumn fx:id="colTurnoEmp" prefWidth="99.0" text="turno" />
-            <TableColumn fx:id="colCargoEmpleado" prefWidth="140.0" text="codigoCargo Empleado" />
+          <TableColumn fx:id="colCodigo" prefWidth="117.66666412353516" text="CodigoEmpleado" />
+          <TableColumn fx:id="colNombres" minWidth="9.666664123535156" prefWidth="120.0" text="nombresEmpleado" />
+            <TableColumn fx:id="colApellidos" prefWidth="130.33331298828125" text="apellidosEmpleado" />
+            <TableColumn fx:id="colSueldo" prefWidth="111.0" text="sueldo" />
+            <TableColumn fx:id="colDireccion" prefWidth="185.0" text="direccion" />
+            <TableColumn fx:id="colTurno" prefWidth="99.0" text="turno" />
+            <TableColumn fx:id="colCargo" prefWidth="140.0" text="codigoCargo Empleado" />
         </columns>
       </TableView>
       <GridPane layoutX="294.0" layoutY="73.0" prefHeight="118.0" prefWidth="651.0">
@@ -170,7 +170,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#Agregar" prefHeight="40.0" prefWidth="115.0" stylesheets="@../resource/KinalitosExpress.css" text="    Agregar" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#agregar" prefHeight="40.0" prefWidth="115.0" stylesheets="@../resource/KinalitosExpress.css" text="    Agregar" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <styleClass>
                   <String fx:value="button3" />
                   <String fx:value="button4" />

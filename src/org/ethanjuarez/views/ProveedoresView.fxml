@@ -61,16 +61,16 @@
                   <String fx:value="label" />
                </styleClass>
             </Label>
-            <TextField fx:id="txtNITProveedor" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="txtNombreProveedor" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="txtApellidoProveedor" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtNitPr" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtNombrePr" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtApellidoPr" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label alignment="CENTER" stylesheets="@../resource/KinalitosExpress.css" text="codigoProveedor">
                <styleClass>
                   <String fx:value="label1" />
                   <String fx:value="label" />
                </styleClass>
             </Label>
-            <TextField fx:id="txtCodigoProveedor" GridPane.columnIndex="1" />
+            <TextField fx:id="txtCodigoPr" GridPane.columnIndex="1" />
          </children>
       </GridPane>
       <GridPane layoutX="464.0" layoutY="129.0" prefHeight="115.0" prefWidth="456.0">
@@ -103,28 +103,28 @@
                   <String fx:value="label" />
                </styleClass>
             </Label>
-            <TextField fx:id="txtDireccionProveedor" GridPane.columnIndex="1" />
-            <TextField fx:id="txtRazonSocial" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="txtContactoPrincipal" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtDireccionPr" GridPane.columnIndex="1" />
+            <TextField fx:id="txtRazonSocialPr" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtContactoPr" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label stylesheets="@../resource/KinalitosExpress.css" text="paginaWeb" GridPane.rowIndex="3">
                <styleClass>
                   <String fx:value="label1" />
                   <String fx:value="label" />
                </styleClass>
             </Label>
-            <TextField fx:id="txtPaginaWeb" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtPaginaWebPr" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <TableView fx:id="tblProveedores" layoutX="59.0" layoutY="259.0" prefHeight="294.0" prefWidth="1013.0">
          <columns>
-            <TableColumn fx:id="colCodigoProveedor" minWidth="74.0" prefWidth="114.0" text="codigoProveedor" />
-            <TableColumn fx:id="colNITProveedor" minWidth="48.0" prefWidth="104.0" text="nitProveedores" />
-            <TableColumn fx:id="colNombreProveedor" minWidth="107.0" prefWidth="136.0" text="nombresProveedores" />
-            <TableColumn fx:id="colApellidoProveedor" minWidth="108.0" prefWidth="185.3333740234375" text="apellidosProveedores" />
-            <TableColumn fx:id="colDireccionProveedor" minWidth="23.0" prefWidth="168.6666259765625" text="direccionProveedor" />
-            <TableColumn fx:id="colRazonSocial" prefWidth="84.3333740234375" text="razonSocial" />
-            <TableColumn fx:id="colContactoPrincipal" prefWidth="115.33331298828125" text="contactoPrincipal" />
-            <TableColumn fx:id="colPaginaWeb" minWidth="74.0" prefWidth="105.66668701171875" text="paginaWeb" />
+            <TableColumn fx:id="colCodigoP" minWidth="74.0" prefWidth="114.0" text="codigoProveedor" />
+            <TableColumn fx:id="colNitP" minWidth="48.0" prefWidth="104.0" text="nitProveedores" />
+            <TableColumn fx:id="colNombresP" minWidth="107.0" prefWidth="136.0" text="nombresProveedores" />
+            <TableColumn fx:id="colApellidosP" minWidth="108.0" prefWidth="185.3333740234375" text="apellidosProveedores" />
+            <TableColumn fx:id="colDireccionP" minWidth="23.0" prefWidth="168.6666259765625" text="direccionProveedor" />
+            <TableColumn fx:id="colRazonSocialP" prefWidth="84.3333740234375" text="razonSocial" />
+            <TableColumn fx:id="colContactoP" prefWidth="115.33331298828125" text="contactoPrincipal" />
+            <TableColumn fx:id="colPagWebP" minWidth="74.0" prefWidth="105.66668701171875" text="paginaWeb" />
          </columns>
       </TableView>
       <GridPane layoutX="283.0" layoutY="562.0" prefHeight="68.0" prefWidth="590.0">
@@ -139,7 +139,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button fx:id="btnReportes" mnemonicParsing="false" prefHeight="55.0" prefWidth="125.0" stylesheets="@../resource/KinalitosExpress.css" text="   Reportes" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Button fx:id="btnReportes" mnemonicParsing="false" onAction="#reportes" prefHeight="55.0" prefWidth="125.0" stylesheets="@../resource/KinalitosExpress.css" text="   Reportes" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <styleClass>
                   <String fx:value="button3" />
                   <String fx:value="button4" />
@@ -152,7 +152,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnEditar" mnemonicParsing="false" prefHeight="55.0" prefWidth="125.0" stylesheets="@../resource/KinalitosExpress.css" text="       Editar" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#editar" prefHeight="55.0" prefWidth="125.0" stylesheets="@../resource/KinalitosExpress.css" text="       Editar" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <styleClass>
                   <String fx:value="button3" />
                   <String fx:value="button4" />
@@ -165,7 +165,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnEliminar" mnemonicParsing="false" prefHeight="55.0" prefWidth="125.0" stylesheets="@../resource/KinalitosExpress.css" text="       Eliminar" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminar" prefHeight="55.0" prefWidth="125.0" stylesheets="@../resource/KinalitosExpress.css" text="       Eliminar" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <styleClass>
                   <String fx:value="button3" />
                   <String fx:value="button4" />
@@ -178,7 +178,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnAgregar" mnemonicParsing="false" prefHeight="55.0" prefWidth="125.0" stylesheets="@../resource/KinalitosExpress.css" text="       Agregar" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#agregar" prefHeight="55.0" prefWidth="125.0" stylesheets="@../resource/KinalitosExpress.css" text="       Agregar" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <styleClass>
                   <String fx:value="button3" />
                   <String fx:value="button4" />
