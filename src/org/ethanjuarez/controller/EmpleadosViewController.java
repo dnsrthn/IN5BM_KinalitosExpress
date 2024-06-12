@@ -10,6 +10,8 @@ import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -34,6 +36,7 @@ import javax.swing.JOptionPane;
 import org.ethanjuarez.bean.CargoEmpleado;
 import org.ethanjuarez.bean.Empleados;
 import org.ethanjuarez.db.Conexion;
+import org.ethanjuarez.reports.GenerarReportes;
 import org.ethanjuarez.system.Main;
 
 /**
@@ -49,9 +52,7 @@ public class EmpleadosViewController implements Initializable {
     private ObservableList<Empleados> listaEmpleados;
     private ObservableList<CargoEmpleado> listaCargoEmpleados;
     @FXML
-    private MenuItem btnRegresar;
-    @FXML
-    private MenuItem btnMenuCargoEmpleado;
+    private Button btnRegresar;
     private Main escenarioPrincipal;
     @FXML
     private Button btnAgregar;
@@ -200,6 +201,7 @@ public class EmpleadosViewController implements Initializable {
         return listaCargoEmpleados = FXCollections.observableList(listaPro);
     }
 
+    @FXML
     public void agregar() {
         switch (tipoDeOperaciones) {
             case NINGUNO:
@@ -256,6 +258,7 @@ public class EmpleadosViewController implements Initializable {
         }
     }
 
+    @FXML
     public void editar() {
         switch (tipoDeOperaciones) {
             case NINGUNO:
@@ -312,6 +315,7 @@ public class EmpleadosViewController implements Initializable {
         }
     }
 
+    @FXML
     public void eliminar() {
 
         switch (tipoDeOperaciones) {
@@ -347,9 +351,11 @@ public class EmpleadosViewController implements Initializable {
 
         }
     }
-
     public void reportes() {
         switch (tipoDeOperaciones) {
+            case NINGUNO:
+                imprimirReporteEmpleados();
+                break;
             case ACTUALIZAR:
                 desactivarControles();
                 limpiarControles();
@@ -359,9 +365,17 @@ public class EmpleadosViewController implements Initializable {
                 btnEliminar.setDisable(false);
                 imgEditar.setImage(new Image("/org/ethanjuarez/images/editar.png"));
                 imgBuscar.setImage(new Image("/org/ethanjuarez/images/buscar.png"));
-                tipoDeOperaciones = operaciones.NINGUNO;
+                tipoDeOperaciones = EmpleadosViewController.operaciones.NINGUNO;
                 break;
+
         }
+    }
+
+    public void imprimirReporteEmpleados() {
+        Map parametros = new HashMap();
+        parametros.put("codigoEmpleado", null);
+        GenerarReportes.mostrarReportes("reporteEmpleados.jasper", "Reporte Clientes", parametros);
+
     }
 
     public void activarControles() {
@@ -394,6 +408,7 @@ public class EmpleadosViewController implements Initializable {
         cmbCargo.getSelectionModel().clearSelection();
     }
 
+    @FXML
     public void handleButtonAction(ActionEvent event) {
         if (event.getSource() == btnRegresar) {
             escenarioPrincipal.menuPrincipalView();

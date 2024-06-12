@@ -33,14 +33,14 @@
             <Image url="@../images/3643769-building-home-house-main-menu-start_113416%20(1).png" />
          </image>
       </ImageView>
-      <TableView layoutX="42.0" layoutY="231.0" prefHeight="185.0" prefWidth="770.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0">
+      <TableView fx:id="tblFacturas" layoutX="42.0" layoutY="231.0" prefHeight="185.0" prefWidth="770.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0">
         <columns>
-          <TableColumn fx:id="colNocFact" prefWidth="112.0" text="NumeroFactura" />
+          <TableColumn fx:id="colNumero" prefWidth="112.0" text="NumeroFactura" />
             <TableColumn fx:id="colEstado" prefWidth="162.0" text="Estado" />
-          <TableColumn fx:id="colTotalFact" prefWidth="114.0" text="Total Factura" />
-            <TableColumn fx:id="colFechaFact" prefWidth="139.0" text="Fech Factura" />
-            <TableColumn fx:id="colClienteId" prefWidth="124.0" text="Cliente Id" />
-            <TableColumn fx:id="colCodigoEmpleado" prefWidth="132.0" text="Codigo Empleado" />
+          <TableColumn fx:id="colTotal" prefWidth="114.0" text="Total Factura" />
+            <TableColumn fx:id="colFecha" prefWidth="139.0" text="Fech Factura" />
+            <TableColumn fx:id="colCliente" prefWidth="124.0" text="Cliente Id" />
+            <TableColumn fx:id="colCodigoEmcolEmpleadopleado" prefWidth="132.0" text="Codigo Empleado" />
         </columns>
       </TableView>
       <GridPane layoutX="88.0" layoutY="415.0" prefHeight="68.0" prefWidth="590.0">
@@ -138,13 +138,7 @@
                   <Insets />
                </GridPane.margin>
             </Label>
-            <Label stylesheets="@../resource/KinalitosExpress.css" text="Total Factura" GridPane.rowIndex="2">
-               <styleClass>
-                  <String fx:value="label" />
-                  <String fx:value="label1" />
-               </styleClass>
-            </Label>
-            <Label stylesheets="@../resource/KinalitosExpress.css" text="Fecha Factura" GridPane.rowIndex="3">
+            <Label stylesheets="@../resource/KinalitosExpress.css" text="Fecha Factura" GridPane.rowIndex="2">
                <styleClass>
                   <String fx:value="label" />
                   <String fx:value="label1" />
@@ -162,12 +156,11 @@
                   <String fx:value="label1" />
                </styleClass>
             </Label>
-            <TextField fx:id="txtNoFact" GridPane.columnIndex="1" />
+            <TextField fx:id="txtNumero" GridPane.columnIndex="1" />
             <TextField fx:id="txtEstado" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="txtTotalFact" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="txtFechaFact" prefHeight="25.0" prefWidth="213.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ComboBox fx:id="cmbCienteId" prefHeight="25.0" prefWidth="189.0" GridPane.columnIndex="3" />
-            <ComboBox fx:id="cmbCodigoEmpleado" prefHeight="25.0" prefWidth="208.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="txtFecha" prefHeight="25.0" prefWidth="213.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cmbClientes" prefHeight="25.0" prefWidth="189.0" GridPane.columnIndex="3" />
+            <ComboBox fx:id="cmbEmpleados" prefHeight="25.0" prefWidth="208.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </children>

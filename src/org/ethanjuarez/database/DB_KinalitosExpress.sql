@@ -3,7 +3,7 @@
 -- 2020269
 
 -- ----------------------- DDL ------------------------------
- -- drop database if exists DB_KinalitosExpress;
+drop database if exists DB_KinalitosExpress;
 
 create database if not exists DB_KinalitosExpress;
 
@@ -132,7 +132,7 @@ create table Factura(
     codigoEmpleado int,
     primary key PK_Factura(numeroFactura),
     constraint FK_Factura_Clientes foreign key Factura(codigoCliente)
-		references Clientes(codigoCliente) on delete cascade,
+		references Cliente(codigoCliente) on delete cascade,
 	constraint FK_Factura_Empleados foreign key Factura(codigoEmpleado)
 		references Empleados(codigoEmpleado) on delete cascade
 );
@@ -156,7 +156,7 @@ create table DetalleFactura(
 delimiter $$
 	create procedure sp_agregarClientes(in codigoCliente int, in NITClientes varchar(10), in nombresCliente varchar(50), in apellidosCliente varchar(50), in direccionCliente varchar(150), in telefonoCliente varchar(8), in correoCliente varchar(45))
 	begin
-		insert into Clientes(codigoCliente, NITClientes, nombresCliente, apellidosCliente, direccionCliente, telefonoCliente, correoCliente)
+		insert into Cliente(codigoCliente, NITClientes, nombresCliente, apellidosCliente, direccionCliente, telefonoCliente, correoCliente)
 		values (codigoCliente, NITClientes, nombresCliente, apellidosCliente, direccionCliente, telefonoCliente, correoCliente);
 	end $$
 delimiter ;
@@ -170,7 +170,7 @@ call sp_agregarClientes(4, '44332211', 'ana', 'lopez', 'plaza de la constitució
 delimiter $$
 	create procedure sp_listarClientes()
 	begin
-		select * from Clientes;
+		select * from Cliente;
 	end $$
 delimiter ;
 
@@ -181,7 +181,7 @@ call sp_listarClientes;
 delimiter $$
 	create procedure sp_buscarClientes(in codigoCliente int)
 	begin
-		select * from Clientes where codigoCliente = codigoCliente;
+		select * from Cliente where codigoCliente = codigoCliente;
 	end $$
 delimiter ;
 
@@ -191,16 +191,16 @@ call sp_buscarClientes(1);
 delimiter $$
 create procedure sp_actualizarClientes(in codigoCliente int, in NITClientes varchar(10), in nombresCliente varchar(50), in apellidosCliente varchar(50), in direccionCliente varchar(150), telefonoCliente varchar(8), in correoCliente varchar(45))
 begin
-	update Clientes
+	update Cliente
     set
-		Clientes.NITClientes = NITClientes,
-        Clientes.nombresCliente = nombresCliente,
-        Clientes.apellidosCliente = apellidosCliente,
-        Clientes.direccionCliente = direccionCliente,
-        Clientes.telefonoCliente = telefonoCliente,
-        Clientes.correoCliente = correoCliente
+		Cliente.NITClientes = NITClientes,
+        Cliente.nombresCliente = nombresCliente,
+        Cliente.apellidosCliente = apellidosCliente,
+        Cliente.direccionCliente = direccionCliente,
+        Cliente.telefonoCliente = telefonoCliente,
+        Cliente.correoCliente = correoCliente
 	where
-		Clientes.codigoCliente = codigoCliente;
+		Cliente.codigoCliente = codigoCliente;
 end $$
 delimiter ;
 
@@ -210,7 +210,7 @@ call sp_actualizarClientes(2,'5434534','Orlando','Gomez','11 Calle y 10 Avenida'
 delimiter $$
 	create procedure sp_eliminarClientes(in codigoCliente int)
 	begin
-		delete from Clientes where Clientes.codigoCliente = codigoCliente;
+		delete from Cliente where Cliente.codigoCliente = codigoCliente;
 	end $$
 delimiter ;
  
@@ -230,6 +230,13 @@ delimiter ;
 call sp_agregarProveedores(1, '5485', 'David', 'Arevalo', '6 calle 4-76 zona 7', 'Arcos Dorados, C.A.', 'Mateo', 'arcosdorados.com');
 call sp_agregarProveedores(2, '3333', 'María', 'González', 'Avenida Principal', 'González & Cía', 'Luisa', 'www.gonzalezycia.com');
 call sp_agregarProveedores(3, '5280', 'Gustavo', 'Verdezoto', '5 calle 4-56 zona 2	', 'Importaciones PFV.', 'Byron', 'PFV.com');
+call sp_agregarProveedores(4, '5281', 'Juan', 'Perez', 'Av. Principal 123', 'Distribuidora XYZ', 'Maria', 'xyz.com');
+call sp_agregarProveedores(5, '5282', 'Pedro', 'Gonzalez', 'Calle 6, Colonia Libertad', 'Ferretería RZ', 'Roberto', 'rzferreteria.com');
+call sp_agregarProveedores(6, '5283', 'María', 'Lopez', 'Av. Central 456', 'Suministros Industriales SA', 'Andrés', 'suministros.com');
+call sp_agregarProveedores(7, '5284', 'Luis', 'Martinez', 'Zona 3, Calle 10', 'Materiales de Construcción LM', 'Elena', 'lmconstruccion.com');
+call sp_agregarProveedores(8, '5285', 'Ana', 'García', 'Calle 7, Colonia San Juan', 'Distribuidora ABC', 'Jorge', 'abc.com');
+call sp_agregarProveedores(9, '5286', 'Carolina', 'Hernández', 'Av. Reforma 123', 'Suministros Industriales MX', 'Alejandro', 'suministros.mx');
+call sp_agregarProveedores(10, '5287', 'Roberto', 'Sánchez', 'Zona 5, Calle 20', 'Ferretería San Pedro', 'Carlos', 'sanpedro.com');
 
 delimiter $$
 	create procedure sp_listarProveedores()
@@ -550,8 +557,17 @@ begin
 end $$
 delimiter ;
 
-call sp_agregarEmpleados(1,'Pedro','Gomez','10.0','10 Calle y 10 Avenida','M',2);
-call sp_agregarEmpleados(2,'Juan','Isaza','10.0','5 Calle y 7 Avenida','V',1);
+call sp_agregarEmpleados(1,'Pedro','Gomez','13000.0','10 Calle y 10 Avenida','Matutino',2);
+call sp_agregarEmpleados(2,'Juan','Isaza','10000.0','5 Calle y 7 Avenida','Vespertino',1);
+call sp_agregarEmpleados(3, 'María', 'Gómez', 8000.5, '8 Avenida y 10 Calle', 'Vespertino', 1);
+call sp_agregarEmpleados(4, 'Pedro', 'López', 9000.75, '15 Avenida y 20 Calle', 'Matutino', 2);
+call sp_agregarEmpleados(5, 'Laura', 'Martínez', 11000.25, '25 Calle y 30 Avenida', 'Matutino', 2);
+call sp_agregarEmpleados(6, 'Carlos', 'González', 9000.0, '12 Calle y 18 Avenida', 'Matutino', 3);
+call sp_agregarEmpleados(7, 'Ana', 'Ramírez', 10000.5, '35 Avenida y 40 Calle', 'Matutino', 3);
+call sp_agregarEmpleados(8, 'Luis', 'Hernández', 9000.25, '42 Calle y 50 Avenida', 'Nocturno', 4);
+call sp_agregarEmpleados(9, 'Sofía', 'Díaz', 10000.75, '55 Avenida y 60 Calle', 'Nocturno', 4);
+call sp_agregarEmpleados(10, 'Jorge', 'Pérez', 10000.0, '65 Calle y 70 Avenida', 'Nocturno', 5);
+call sp_agregarEmpleados(11, 'Lucía', 'Sánchez', 9000.5, '75 Avenida y 80 Calle', 'Nocturno', 5);
 
 
 delimiter $$
