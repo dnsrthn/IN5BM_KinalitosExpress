@@ -20,14 +20,14 @@
             <Image url="@../images/menuClientes.png" />
          </image>
       </ImageView>
-      <TableView fx:id="tblCliente" layoutX="15.0" layoutY="244.0" onMouseClicked="#seleccionarElemento" prefHeight="297.0" prefWidth="1100.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+      <TableView fx:id="tblClientes" layoutX="15.0" layoutY="244.0" onMouseClicked="#seleccionarElemento" prefHeight="297.0" prefWidth="1100.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
         <columns>
-          <TableColumn fx:id="colClienteId" minWidth="74.0" prefWidth="90.0" text="ClienteId" />
-          <TableColumn fx:id="colNitCliente" minWidth="113.33333587646484" prefWidth="188.66665649414062" text="NitCliente" />
-            <TableColumn fx:id="colNombresCliente" minWidth="26.666656494140625" prefWidth="177.0" text="NombreCliente" />
-            <TableColumn fx:id="colApellidoCliente" minWidth="0.0" prefWidth="223.33331298828125" text="ApellidoCliente" />
-            <TableColumn fx:id="colDireccionCliente" minWidth="0.0" prefWidth="112.66668701171875" text="Direccion Cliente" />
-            <TableColumn fx:id="colTelefonoCliente" prefWidth="107.66668701171875" text="TelefonoCliente" />
+          <TableColumn fx:id="colCodigoC" minWidth="74.0" prefWidth="90.0" text="ClienteId" />
+            <TableColumn fx:id="colNombreC" minWidth="26.666656494140625" prefWidth="177.0" text="NombreCliente" />
+            <TableColumn fx:id="colApellidoC" minWidth="0.0" prefWidth="111.0" text="ApellidoCliente" />
+          <TableColumn fx:id="colNitC" minWidth="90.0" prefWidth="166.0" text="NitCliente" />
+            <TableColumn fx:id="colDireccionC" minWidth="0.0" prefWidth="249.0" text="Direccion Cliente" />
+            <TableColumn fx:id="colCorreoC" prefWidth="107.66668701171875" text="TelefonoCliente" />
             <TableColumn fx:id="colCorreoCliente" prefWidth="201.0" text="CorreoCliente" />
         </columns>
       </TableView>
@@ -57,7 +57,7 @@
                   <String fx:value="label1" />
                   <String fx:value="label" />
                </styleClass></Label>
-            <TextField fx:id="txtIdC" GridPane.columnIndex="1" />
+            <TextField fx:id="txtCodigoC" GridPane.columnIndex="1" />
             <TextField fx:id="txtNombreC" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="txtApellidoC" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
@@ -123,7 +123,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button fx:id="btnReportes" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="125.0" stylesheets="@../resource/KinalitosExpress.css" text="   Reportes" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Button fx:id="btnReportes" mnemonicParsing="false" onAction="#reportes" prefHeight="55.0" prefWidth="125.0" stylesheets="@../resource/KinalitosExpress.css" text="   Reportes" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <styleClass>
                   <String fx:value="button3" />
                   <String fx:value="button4" />
@@ -162,7 +162,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#Agregar" prefHeight="55.0" prefWidth="125.0" stylesheets="@../resource/KinalitosExpress.css" text="       Agregar" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#agregar" prefHeight="55.0" prefWidth="125.0" stylesheets="@../resource/KinalitosExpress.css" text="       Agregar" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <styleClass>
                   <String fx:value="button3" />
                   <String fx:value="button4" />

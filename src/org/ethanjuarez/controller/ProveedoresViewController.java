@@ -25,7 +25,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import org.ethanjuarez.bean.Proveedores;
 import org.ethanjuarez.db.Conexion;
-import org.ethanjuarez.system.Principal;
+import org.ethanjuarez.system.Main;
 
 /**
  * FXML Controller class
@@ -34,7 +34,7 @@ import org.ethanjuarez.system.Principal;
  */
 public class ProveedoresViewController implements Initializable {
 
-    private Principal escenarioPrincipal;
+    private Main escenarioPrincipal;
     private ObservableList<Proveedores> listaProveedores;
 
     private enum Operaciones {
@@ -105,7 +105,7 @@ public class ProveedoresViewController implements Initializable {
         escenarioPrincipal.menuPrincipalView();
     }
 
-    public void setEscenarioPrincipal(Principal escenarioPrincipal) {
+    public void setEscenarioPrincipal(Main escenarioPrincipal) {
         this.escenarioPrincipal = escenarioPrincipal;
     }
 

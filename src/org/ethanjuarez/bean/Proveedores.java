@@ -6,24 +6,24 @@
 package org.ethanjuarez.bean;
 
 public class Proveedores {
-
     private int codigoProveedor;
-    private String nitProveedores;
-    private String nombresProveedores;
-    private String apellidosProveedores;
+    private String NITProveedor;
+    private String nombresProveedor;
+    private String apellidosProveedor;
     private String direccionProveedor;
     private String razonSocial;
     private String contactoPrincipal;
     private String paginaWeb;
 
     public Proveedores() {
+        
     }
 
-    public Proveedores(int codigoProveedor, String nitProveedores, String nombresProveedores, String apellidosProveedores, String direccionProveedor, String razonSocial, String contactoPrincipal, String paginaWeb) {
+    public Proveedores(int codigoProveedor, String NITProveedor, String nombresProveedor, String apellidosProveedor, String direccionProveedor, String razonSocial, String contactoPrincipal, String paginaWeb) {
         this.codigoProveedor = codigoProveedor;
-        this.nitProveedores = nitProveedores;
-        this.nombresProveedores = nombresProveedores;
-        this.apellidosProveedores = apellidosProveedores;
+        this.NITProveedor = NITProveedor;
+        this.nombresProveedor = nombresProveedor;
+        this.apellidosProveedor = apellidosProveedor;
         this.direccionProveedor = direccionProveedor;
         this.razonSocial = razonSocial;
         this.contactoPrincipal = contactoPrincipal;
@@ -38,28 +38,28 @@ public class Proveedores {
         this.codigoProveedor = codigoProveedor;
     }
 
-    public String getNitProveedores() {
-        return nitProveedores;
+    public String getNITProveedor() {
+        return NITProveedor;
     }
 
-    public void setNitProveedores(String nitProveedores) {
-        this.nitProveedores = nitProveedores;
+    public void setNITProveedor(String NITProveedor) {
+        this.NITProveedor = NITProveedor;
     }
 
-    public String getNombresProveedores() {
-        return nombresProveedores;
+    public String getNombresProveedor() {
+        return nombresProveedor;
     }
 
-    public void setNombresProveedores(String nombresProveedores) {
-        this.nombresProveedores = nombresProveedores;
+    public void setNombresProveedor(String nombresProveedor) {
+        this.nombresProveedor = nombresProveedor;
     }
 
-    public String getApellidosProveedores() {
-        return apellidosProveedores;
+    public String getApellidosProveedor() {
+        return apellidosProveedor;
     }
 
-    public void setApellidosProveedores(String apellidosProveedores) {
-        this.apellidosProveedores = apellidosProveedores;
+    public void setApellidosProveedor(String apellidosProveedor) {
+        this.apellidosProveedor = apellidosProveedor;
     }
 
     public String getDireccionProveedor() {
@@ -93,6 +93,10 @@ public class Proveedores {
     public void setPaginaWeb(String paginaWeb) {
         this.paginaWeb = paginaWeb;
     }
-
-   
+    
+    
+    @Override
+    public String toString() {
+        return getCodigoProveedor() + ") " + getNombresProveedor();
+    }
 }

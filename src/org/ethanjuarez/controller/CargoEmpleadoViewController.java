@@ -21,12 +21,12 @@ import javafx.scene.image.ImageView;
 import javax.swing.JOptionPane;
 import org.ethanjuarez.bean.CargoEmpleado;
 import org.ethanjuarez.db.Conexion;
-import org.ethanjuarez.system.Principal;
+import org.ethanjuarez.system.Main;
 
 public class CargoEmpleadoViewController implements Initializable {
 
     private ObservableList<CargoEmpleado> listaCargoEmpleado;
-    private Principal escenarioPrincipal;
+    private Main escenarioPrincipal;
 
     private enum operaciones {
         AGREGAR, ELIMINAR, EDITAR, ACTUALIZAR, CANCELAR, NINGUNO
@@ -70,7 +70,7 @@ public class CargoEmpleadoViewController implements Initializable {
         escenarioPrincipal.menuPrincipalView();
     }
 
-    public void setEscenarioPrincipal(Principal escenarioPrincipal) {
+    public void setEscenarioPrincipal(Main escenarioPrincipal) {
         this.escenarioPrincipal = escenarioPrincipal;
     }
 

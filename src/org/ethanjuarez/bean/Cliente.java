@@ -9,51 +9,54 @@ package org.ethanjuarez.bean;
  *
  * @author Catherine
  */
-public class Cliente {
 
-    private int clienteID;
-    private String nombreClientes;
-    private String apellidoClientes;
+
+public class Cliente {
+    
+    private int codigoCliente;
+    private String nombresCliente;
+    private String apellidosCliente;
     private String nitClientes;
-    private String telefonoClientes;
-    private String direccionClientes;
-    private String correoClientes;
+    private String telefonoCliente;
+    private String direccionCliente;
+    private String correoCliente;
 
     public Cliente() {
+        
     }
 
-    public Cliente(int clienteID, String nombreClientes, String apellidoClientes, String nitClientes, String telefonoClientes, String direccionClientes, String correoClientes) {
-        this.clienteID = clienteID;
-        this.nombreClientes = nombreClientes;
-        this.apellidoClientes = apellidoClientes;
+    public Cliente(int codigoCliente, String nombresCliente, String apellidosCliente, String nitClientes, String telefonoCliente, String direccionCliente, String correoCliente) {
+        this.codigoCliente = codigoCliente;
+        this.nombresCliente = nombresCliente;
+        this.apellidosCliente = apellidosCliente;
         this.nitClientes = nitClientes;
-        this.telefonoClientes = telefonoClientes;
-        this.direccionClientes = direccionClientes;
-        this.correoClientes = correoClientes;
+        this.telefonoCliente = telefonoCliente;
+        this.direccionCliente = direccionCliente;
+        this.correoCliente = correoCliente;
     }
 
-    public int getClienteID() {
-        return clienteID;
+    public int getCodigoCliente() {
+        return codigoCliente;
     }
 
-    public void setClienteID(int clienteID) {
-        this.clienteID = clienteID;
+    public void setCodigoCliente(int codigoCliente) {
+        this.codigoCliente = codigoCliente;
     }
 
-    public String getNombreClientes() {
-        return nombreClientes;
+    public String getNombresCliente() {
+        return nombresCliente;
     }
 
-    public void setNombreClientes(String nombreClientes) {
-        this.nombreClientes = nombreClientes;
+    public void setNombresCliente(String nombresCliente) {
+        this.nombresCliente = nombresCliente;
     }
 
-    public String getApellidoClientes() {
-        return apellidoClientes;
+    public String getApellidosCliente() {
+        return apellidosCliente;
     }
 
-    public void setApellidoClientes(String apellidoClientes) {
-        this.apellidoClientes = apellidoClientes;
+    public void setApellidosCliente(String apellidosCliente) {
+        this.apellidosCliente = apellidosCliente;
     }
 
     public String getNitClientes() {
@@ -64,28 +67,33 @@ public class Cliente {
         this.nitClientes = nitClientes;
     }
 
-    public String getTelefonoClientes() {
-        return telefonoClientes;
+    public String getTelefonoCliente() {
+        return telefonoCliente;
     }
 
-    public void setTelefonoClientes(String telefonoClientes) {
-        this.telefonoClientes = telefonoClientes;
+    public void setTelefonoCliente(String telefonoCliente) {
+        this.telefonoCliente = telefonoCliente;
     }
 
-    public String getDireccionClientes() {
-        return direccionClientes;
+    public String getDireccionCliente() {
+        return direccionCliente;
     }
 
-    public void setDireccionClientes(String direccionClientes) {
-        this.direccionClientes = direccionClientes;
+    public void setDireccionCliente(String direccionCliente) {
+        this.direccionCliente = direccionCliente;
     }
 
-    public String getCorreoClientes() {
-        return correoClientes;
+    public String getCorreoCliente() {
+        return correoCliente;
     }
 
-    public void setCorreoClientes(String correoClientes) {
-        this.correoClientes = correoClientes;
+    public void setCorreoCliente(String correoCliente) {
+        this.correoCliente = correoCliente;
     }
 
+    @Override
+    public String toString() {        
+        return getCodigoCliente() + " ) " + getNombresCliente();
+    }
+        
 }

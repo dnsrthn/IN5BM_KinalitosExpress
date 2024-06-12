@@ -25,7 +25,7 @@ import org.ethanjuarez.bean.Productos;
 import org.ethanjuarez.bean.Proveedores;
 import org.ethanjuarez.bean.TipoProducto;
 import org.ethanjuarez.db.Conexion;
-import org.ethanjuarez.system.Principal;
+import org.ethanjuarez.system.Main;
 
 /**
  * FXML Controller class
@@ -34,7 +34,7 @@ import org.ethanjuarez.system.Principal;
  */
 public class ProductosViewController implements Initializable {
 
-    private Principal escenarioPrincipal;
+    private Main escenarioPrincipal;
 
     private enum operaciones {
         AGREGAR, ELIMINAR, EDITAR, ACTUALIZAR, CANCELAR, NINGUNO
@@ -96,11 +96,11 @@ public class ProductosViewController implements Initializable {
         }
     }
 
-    public Principal getEscenarioPrincipal() {
+    public Main getEscenarioPrincipal() {
         return escenarioPrincipal;
     }
 
-    public void setEscenarioPrincipal(Principal escenarioPrincipal) {
+    public void setEscenarioPrincipal(Main escenarioPrincipal) {
         this.escenarioPrincipal = escenarioPrincipal;
     }
 

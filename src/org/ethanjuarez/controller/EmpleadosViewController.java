@@ -18,7 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import org.ethanjuarez.bean.Compras;
 import org.ethanjuarez.bean.Empleados;
-import org.ethanjuarez.system.Principal;
+import org.ethanjuarez.system.Main;
 
 /**
  * FXML Controller class
@@ -27,7 +27,7 @@ import org.ethanjuarez.system.Principal;
  */
 public class EmpleadosViewController implements Initializable {
 
-    private Principal escenarioPrincipal;
+    private Main escenarioPrincipal;
     @FXML
     private TableView<Empleados> tblEmpleados;
     @FXML
@@ -82,7 +82,7 @@ public class EmpleadosViewController implements Initializable {
         escenarioPrincipal.menuPrincipalView();
     }
 
-    public void setEscenarioPrincipal(Principal escenarioPrincipal) {
+    public void setEscenarioPrincipal(Main escenarioPrincipal) {
         this.escenarioPrincipal = escenarioPrincipal;
     }
 

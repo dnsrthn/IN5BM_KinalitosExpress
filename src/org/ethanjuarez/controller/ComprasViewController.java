@@ -28,7 +28,7 @@ import javax.swing.JOptionPane;
 import org.ethanjuarez.bean.Compras;
 import org.ethanjuarez.bean.TipoProducto;
 import org.ethanjuarez.db.Conexion;
-import org.ethanjuarez.system.Principal;
+import org.ethanjuarez.system.Main;
 
 /**
  * FXML Controller class
@@ -38,7 +38,7 @@ import org.ethanjuarez.system.Principal;
 public class ComprasViewController implements Initializable {
 
     private ObservableList<Compras> listaCompras;
-    private Principal escenarioPrincipal;
+    private Main escenarioPrincipal;
 
     private enum operaciones {
         AGREGAR, ELIMINAR, EDITAR, ACTUALIZAR, CANCELAR, NINGUNO
@@ -87,7 +87,7 @@ public class ComprasViewController implements Initializable {
         escenarioPrincipal.menuPrincipalView();
     }
 
-    public void setEscenarioPrincipal(Principal escenarioPrincipal) {
+    public void setEscenarioPrincipal(Main escenarioPrincipal) {
         this.escenarioPrincipal = escenarioPrincipal;
     }
 

@@ -5,28 +5,28 @@
  */
 package org.ethanjuarez.bean;
 
+
 public class Factura {
+    
     private int numeroFactura;
     private String estado;
-    private double totalFactura;
+    private Double totalFactura;
     private String fechaFactura;
-    private int clienteID;
+    private int codigoCliente;
     private int codigoEmpleado;
 
     public Factura() {
+        
     }
 
-    
-    public Factura(int numeroFactura, String estado, double totalFactura, String fechaFactura, int clienteID, int codigoEmpleado) {
+    public Factura(int numeroFactura, String estado, Double totalFactura, String fechaFactura, int codigoCliente, int codigoEmpleado) {
         this.numeroFactura = numeroFactura;
         this.estado = estado;
         this.totalFactura = totalFactura;
         this.fechaFactura = fechaFactura;
-        this.clienteID = clienteID;
+        this.codigoCliente = codigoCliente;
         this.codigoEmpleado = codigoEmpleado;
     }
-
-    // getters y setters
 
     public int getNumeroFactura() {
         return numeroFactura;
@@ -44,11 +44,11 @@ public class Factura {
         this.estado = estado;
     }
 
-    public double getTotalFactura() {
+    public Double getTotalFactura() {
         return totalFactura;
     }
 
-    public void setTotalFactura(double totalFactura) {
+    public void setTotalFactura(Double totalFactura) {
         this.totalFactura = totalFactura;
     }
 
@@ -60,12 +60,12 @@ public class Factura {
         this.fechaFactura = fechaFactura;
     }
 
-    public int getClienteID() {
-        return clienteID;
+    public int getCodigoCliente() {
+        return codigoCliente;
     }
 
-    public void setClienteID(int clienteID) {
-        this.clienteID = clienteID;
+    public void setCodigoCliente(int codigoCliente) {
+        this.codigoCliente = codigoCliente;
     }
 
     public int getCodigoEmpleado() {
@@ -75,4 +75,10 @@ public class Factura {
     public void setCodigoEmpleado(int codigoEmpleado) {
         this.codigoEmpleado = codigoEmpleado;
     }
+
+    @Override
+    public String toString() {
+        return getNumeroFactura() + " ) " + getTotalFactura() + " || " + getEstado();
+    }
+    
 }

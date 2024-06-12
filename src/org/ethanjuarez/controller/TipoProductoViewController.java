@@ -7,7 +7,7 @@ package org.ethanjuarez.controller;
 
 import org.ethanjuarez.bean.TipoProducto;
 import org.ethanjuarez.db.Conexion;
-import org.ethanjuarez.system.Principal;
+import org.ethanjuarez.system.Main;
 import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -43,7 +43,7 @@ public class TipoProductoViewController implements Initializable {
         AGREGAR, ELIMINAR, EDITAR, ACTUALIZAR, CANCELAR, NINGUNO
     }
     private operaciones tipoDeOperaciones = operaciones.NINGUNO;
-    private Principal escenarioPrincipal;
+    private Main escenarioPrincipal;
 
     @FXML
     private TableView<TipoProducto> tblTtipoProductos;
@@ -79,7 +79,7 @@ public class TipoProductoViewController implements Initializable {
         escenarioPrincipal.menuPrincipalView();
     }
 
-    public void setEscenarioPrincipal(Principal escenarioPrincipal) {
+    public void setEscenarioPrincipal(Main escenarioPrincipal) {
         this.escenarioPrincipal = escenarioPrincipal;
     }
 

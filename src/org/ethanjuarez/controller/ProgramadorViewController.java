@@ -11,7 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import org.ethanjuarez.system.Principal;
+import org.ethanjuarez.system.Main;
 
 /**
  * FXML Controller class
@@ -20,7 +20,7 @@ import org.ethanjuarez.system.Principal;
  */
 public class ProgramadorViewController implements Initializable {
 
-    private Principal escenarioPrincipal;
+    private Main escenarioPrincipal;
     @FXML
     private Button btnRegresar;
 
@@ -29,11 +29,11 @@ public class ProgramadorViewController implements Initializable {
         // TODO
     }
 
-    public Principal getEscenarioPrincipal() {
+    public Main getEscenarioPrincipal() {
         return escenarioPrincipal;
     }
 
-    public void setEscenarioPrincipal(Principal escenarioPrincipal) {
+    public void setEscenarioPrincipal(Main escenarioPrincipal) {
         this.escenarioPrincipal = escenarioPrincipal;
     }
 

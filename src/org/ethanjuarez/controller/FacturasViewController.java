@@ -18,11 +18,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import org.ethanjuarez.bean.Empleados;
 import org.ethanjuarez.bean.Factura;
-import org.ethanjuarez.system.Principal;
+import org.ethanjuarez.system.Main;
 
 public class FacturasViewController implements Initializable {
 
-    private Principal escenarioPrincipal;
+    private Main escenarioPrincipal;
     @FXML
     private TableView<Factura> tblEmpleados;
     @FXML
@@ -72,7 +72,7 @@ public class FacturasViewController implements Initializable {
         escenarioPrincipal.menuPrincipalView();
     }
 
-    public void setEscenarioPrincipal(Principal escenarioPrincipal) {
+    public void setEscenarioPrincipal(Main escenarioPrincipal) {
         this.escenarioPrincipal = escenarioPrincipal;
     }
 

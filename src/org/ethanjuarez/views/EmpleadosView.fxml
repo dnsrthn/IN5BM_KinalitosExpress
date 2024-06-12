@@ -99,13 +99,13 @@
                   <String fx:value="label1" />
                </styleClass>
             </Label>
-            <TextField fx:id="txtCodigoEmp" GridPane.columnIndex="1" />
-            <TextField fx:id="txtNombresEmp" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="txtApellidosEmp" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="txtSueldoEmp" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="txtDireccionEmp" GridPane.columnIndex="3" />
-            <TextField fx:id="txtTurnoEmp" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <ComboBox fx:id="cmbCargoEmpleado" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField fx:id="txtCodigo" GridPane.columnIndex="1" />
+            <TextField fx:id="txtNombres" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtApellidos" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtSueldo" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtDireccion" GridPane.columnIndex="3" />
+            <TextField fx:id="txtTurno" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <ComboBox fx:id="cmbCargo" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <Button fx:id="btnRegresar" alignment="CENTER" layoutX="792.0" layoutY="495.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="28.0" prefWidth="74.0" stylesheets="@../resource/KinalitosExpress.css">
